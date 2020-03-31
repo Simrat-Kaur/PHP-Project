@@ -147,7 +147,7 @@ if (empty($_POST["address"])) {
 $adderr="Name is required";
 
 } else {
-$add = test_input($_POST["add"]);
+$add = test_input($_POST["address"]);
 // check name only contains letters and whitespace
 if (!preg_match("/^[a-zA-Z0-9]*$/",$add)) {
 $adderr = "Only letters ,numbers and white space allowed";
@@ -240,8 +240,8 @@ $expmontherr = "Only letters and white space allowed";
 // }
 	
 
-$sql = "INSERT INTO user(name,email,city,state,zip)
-VALUES ('$name','$email','$city','$state','$zip')";
+$sql = "INSERT INTO paymentdetails(name,address,email,state,city,zip)
+VALUES ('$name','$add','$email','$state','$city','$zip')";
 
 if (mysqli_query($conn, $sql)) {
    echo '<script>alert("New record created successfully")</script>';

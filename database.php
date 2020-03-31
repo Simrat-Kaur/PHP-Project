@@ -1,5 +1,5 @@
 <?php
-$url='localhost:3307';
+$url='localhost:3306';
 $username='root';
 $password='';
 $dbname="mydb";
@@ -9,6 +9,6 @@ if(!$conn){
 }
 else
 {
-	
+
 }
 ?>

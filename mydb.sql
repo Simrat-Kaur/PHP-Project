@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: Mar 27, 2020 at 09:18 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.26
+-- Host: 127.0.0.1
+-- Generation Time: Mar 31, 2020 at 09:33 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,7 +40,35 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`name`, `email`, `subject`, `message`) VALUES
-('Shivam Pandey', 'shivamguys@gmail.com', 'aa', 'aa');
+('Shivam Pandey', 'shivamguys@gmail.com', 'aa', 'aa'),
+('SImrat', 'simrat@gmail.com', 'hello', 'Hi,my name is simrat');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `paymentdetails`
+--
+
+CREATE TABLE `paymentdetails` (
+  `name` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `zip` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `paymentdetails`
+--
+
+INSERT INTO `paymentdetails` (`name`, `address`, `email`, `state`, `city`, `zip`) VALUES
+('Simrat Kaur', 'Lovely Professional University', 'simrat.kaur.takhar@gmail.com', 'Punjab', 'Phagwara', 144411),
+('Harman', 'Preet Nagar', 'harman@gmail.com', 'Punjab', 'Jalandhar', 144032),
+('Rohit', 'New Model Town', 'Rohit@gmail.com', 'Punjab', 'Jalandhar', 144442),
+('Apoorv', 'New Street', 'apoorv@gmail.com', 'Punjab', 'Jalandhar', 144444),
+('Simrat', 'Sundar Nagar', 'simrat@gmail.com', 'Punjab', 'Nakodar', 144432),
+('Raman', 'New Era street', 'Raman@gmail.com', 'Nakodar', 'Jalandhar', 144043);
 
 -- --------------------------------------------------------
 
@@ -49,6 +77,7 @@ INSERT INTO `contact` (`name`, `email`, `subject`, `message`) VALUES
 --
 
 CREATE TABLE `productdetails` (
+  `id` int(6) NOT NULL,
   `name` varchar(100) NOT NULL,
   `quantity` int(13) NOT NULL,
   `price` int(14) NOT NULL
@@ -58,8 +87,10 @@ CREATE TABLE `productdetails` (
 -- Dumping data for table `productdetails`
 --
 
-INSERT INTO `productdetails` (`name`, `quantity`, `price`) VALUES
-('Sicilian Pizza', 1, 115);
+INSERT INTO `productdetails` (`id`, `name`, `quantity`, `price`) VALUES
+(7, 'Patty Burger', 2, 145),
+(11, 'Greek Pizza', 1, 195),
+(12, 'Chile-Stuffed Cheeseburger', 2, 135);
 
 -- --------------------------------------------------------
 
@@ -68,6 +99,7 @@ INSERT INTO `productdetails` (`name`, `quantity`, `price`) VALUES
 --
 
 CREATE TABLE `user` (
+  `id` int(6) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
@@ -77,13 +109,42 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`name`, `email`, `password`) VALUES
+INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
+(17, 'Simrat Kaur', 'simrat.kaur.takhar@gmail.com', 'c897747c25ef370b300046b91f1c1590'),
+(18, 'Apoorv Bhatnagar', 'Apoorvbhatnagar@gmail.com', 'c897747c25ef370b300046b91f1c1590'),
+(19, 'Harman', 'Harman@gmail.com', 'c897747c25ef370b300046b91f1c1590');
 
-('Apoorv', 'Apoorvbhatnagarb31@gmail.com', '7e944374a8b6c523aec02ba95edc62fd'),
-('Apoorv', 'Apoorvbhatnagarb31@gmail.com', '7e944374a8b6c523aec02ba95edc62fd'),
-('Apoorv', 'Apoorvbhatnagarb31@gmail.com', '7e944374a8b6c523aec02ba95edc62fd'),
-('Apoorv bhatnagar', 'Apoorvbhatnagarb31@gmail.com', '7e944374a8b6c523aec02ba95edc62fd'),
+--
+-- Indexes for dumped tables
+--
 
+--
+-- Indexes for table `productdetails`
+--
+ALTER TABLE `productdetails`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `productdetails`
+--
+ALTER TABLE `productdetails`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

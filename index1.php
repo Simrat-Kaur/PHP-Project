@@ -57,9 +57,9 @@
 							  <li class="menu-active"><a href="index1.php">Home</a></li>
 							
 							  <li><a href="menu.php">Menu</a></li>
-							  <li><a href="team.html">Add To Cart</a></li>
+							  <li><a href="cart.php">View Cart</a></li>
 							 		          	          
-													  			          	          
+							<li><a href="contact.php">Contact</a></li>						  			          	          
 							  <li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav><!-- #nav-menu-container -->		
@@ -80,7 +80,7 @@
 							<p class="text-white mx-auto">
 								Since Americans in the South began roasting pigs publicly, Barbecues have been a staple of North American living. For many, grilling becomes a routine mealtime activity.
 							</p>
-							<a href="#" class="primary-btn squire text-uppercase mt-10">Check Our Menu</a>
+							<a href="menu.php" class="primary-btn squire text-uppercase mt-10">Check Our Menu</a>
 						</div>											
 					</div>
 				</div>

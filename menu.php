@@ -186,9 +186,9 @@ mysqli_close($conn);
 							  <li class="menu-active"><a href="index1.php">Home</a></li>
 							
 							  <li><a href="menu.php">Menu</a></li>
-							  <li><a href="cart.php">Add To Cart</a></li>
+							  <li><a href="cart.php">View Cart</a></li>
 							 		          	          
-													  			          	          
+							<li><a href="contact.php">Contact</a></li>					  			          	          
 							  <li><a href="logout.php">Logout</a></li>
 							</ul>
 						</nav><!-- #nav-menu-container -->		
